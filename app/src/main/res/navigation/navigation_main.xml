@@ -39,7 +39,7 @@
         android:name="com.example.expensetracker.view.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
+    <dialog
         android:id="@+id/expenseDetailFragment"
         android:name="com.example.expensetracker.view.ExpenseDetailFragment"
         android:label="Expense Detail"
@@ -47,7 +47,7 @@
         <argument
             android:name="expense_id"
             app:argType="integer" />
-    </fragment>
+    </dialog>
     <fragment
         android:id="@+id/expenseNewFragment"
         android:name="com.example.expensetracker.view.ExpenseNewFragment"
