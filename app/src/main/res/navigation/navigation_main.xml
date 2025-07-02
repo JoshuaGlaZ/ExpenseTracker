@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/itemTracker">
+
+    <fragment
+        android:id="@+id/itemTracker"
+        android:name="com.example.expensetracker.view.ExpenseTrackerFragment"
+        android:label="Expense Tracker"
+        tools:layout="@layout/fragment_expense_tracker" >
+        <action
+            android:id="@+id/actionExpenseDetailFragment"
+            app:destination="@id/expenseDetailFragment" />
+        <action
+            android:id="@+id/actionExpenseNewFragment"
+            app:destination="@id/expenseNewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemBudgeting"
+        android:name="com.example.expensetracker.view.BudgetingFragment"
+        android:label="Budgeting"
+        tools:layout="@layout/fragment_budgeting" >
+        <action
+            android:id="@+id/actionNewBudgetFragment"
+            app:destination="@id/budgetNewFragment" />
+        <action
+            android:id="@+id/actionBudgetEditFragment"
+            app:destination="@id/budgetEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemReport"
+        android:name="com.example.expensetracker.view.ReportFragment"
+        android:label="Report"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.example.expensetracker.view.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/expenseDetailFragment"
+        android:name="com.example.expensetracker.view.ExpenseDetailFragment"
+        android:label="Expense Detail"
+        tools:layout="@layout/fragment_expense_detail" >
+        <argument
+            android:name="expense_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/expenseNewFragment"
+        android:name="com.example.expensetracker.view.ExpenseNewFragment"
+        android:label="New Expense"
+        tools:layout="@layout/fragment_expense_new" >
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/budgetNewFragment"
+        android:name="com.example.expensetracker.view.BudgetNewFragment"
+        android:label="New Budget"
+        tools:layout="@layout/fragment_budget_new" >
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/budgetEditFragment"
+        android:name="com.example.expensetracker.view.BudgetEditFragment"
+        android:label="Edit Budget" >
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+        <argument
+            android:name="budget_id"
+            app:argType="integer" />
+    </fragment>
+</navigation>

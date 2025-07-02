@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ExpenseDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDatetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/plus_jakarta_sans"
+            android:text="dd MM YYYY HH A"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/plus_jakarta_sans"
+            android:text="lorem ipsum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDatetime" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNote"
+            app:singleLine="false">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:singleLine="true"
+                android:textColor="?attr/colorOnSecondaryContainer"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:chipBackgroundColor="?attr/colorSecondaryContainer"
+                app:chipEndPadding="12dp"
+                app:chipMinHeight="32dp"
+                app:chipStartPadding="12dp"
+                app:chipStrokeWidth="0dp"
+                app:textAppearanceLabelSmall="@style/TextAppearance.Material3.LabelSmall"
+                app:textEndPadding="8dp"
+                app:textStartPadding="8dp"
+                tools:text="Type" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/txtNominal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/sanchez"
+            android:text="New Budget"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:theme="@style/Base.Theme.ExpenseTracker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+        <Button
+            android:id="@+id/btnAddBudget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:text="CLOSE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNominal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

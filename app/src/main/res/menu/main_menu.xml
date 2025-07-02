@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemTracker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_add_card_24"
+        android:title="Tracker"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemBudgeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_pie_chart_24"
+        android:title="Budgeting"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemReport"
+        android:icon="@drawable/baseline_bar_chart_24"
+        android:title="Report"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemProfile"
+        android:icon="@drawable/baseline_person_24"
+        android:title="Profile"
+        app:showAsAction="always" />
+</menu>
