@@ -68,6 +68,15 @@ class ExpenseNewFragment : Fragment() {
             val formatted = NumberFormat.getNumberInstance(Locale("in", "ID"))
                 .format(total)
             binding.txtTotalBudget.text = "IDR $formatted"
+
+            val totalBudget = viewModel.budgetAmount.value ?: 0.0
+            val totalUsed = viewModel.totalExpenses.value ?: 0.0
+            val budgetLeft = totalBudget - totalUsed
+
+            val formattedLeft = NumberFormat.getNumberInstance(Locale("in", "ID"))
+                .format(budgetLeft)
+
+            binding.txtInputLayoutNominal.hint = ("Nominal (IDR ${formattedLeft} left)")
         }
 
         viewModel.totalExpenses.observe(viewLifecycleOwner) { expenses ->
@@ -76,6 +85,15 @@ class ExpenseNewFragment : Fragment() {
             val formatted = NumberFormat.getNumberInstance(Locale("in", "ID"))
                 .format(expenses)
             binding.txtBudgetLeft.text = "IDR $formatted"
+
+            val totalBudget = viewModel.budgetAmount.value ?: 0.0
+            val totalUsed = viewModel.totalExpenses.value ?: 0.0
+            val budgetLeft = totalBudget - totalUsed
+
+            val formattedLeft = NumberFormat.getNumberInstance(Locale("in", "ID"))
+                .format(budgetLeft)
+
+            binding.txtInputLayoutNominal.hint = ("Nominal (IDR ${formattedLeft} left)")
         }
 
         val displayFormat =
@@ -84,6 +102,7 @@ class ExpenseNewFragment : Fragment() {
         val formattedDate: String = displayFormat.format(currentTime)
 
         binding.txtDate.text = formattedDate
+
         binding.btnAddBudget.setOnClickListener {
             val nominal: Double? = binding.txtNominal.text.toString().toDoubleOrNull()
             val notes: String = binding.txtNotes.text.toString()
